@@ -1,0 +1,13 @@
+[Unit]
+Description=MQTT to MySQL Connector Python Service
+After=network.target
+
+[Service]
+User=iotlab
+WorkingDirectory=/home/iotlab
+ExecStart=/home/iotlab/mqttenv/bin/python /home/iotlab/mqtt_mysql_iotlabserver.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
